@@ -299,7 +299,7 @@ return [
             'quoteIdentifiers' => false,
             'host' => 'localhost', // Make sure to set the correct DB host
             'username' => 'root', // Make sure to set the correct DB username
-            'password' => '', // Make sure to set the correct DB password
+            'password' => 'root', // Make sure to set the correct DB password
             'database' => 'cyfrif_campaign', // Make sure to set the correct DB name
         ],
 
