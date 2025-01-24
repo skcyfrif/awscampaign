@@ -1,0 +1,135 @@
+<!DOCTYPE html> 
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Upload and crop</title>
+
+        <meta name="description" content="Croppie is an easy to use javascript image cropper.">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>
+        <link rel="Stylesheet" type="text/css" href="prism.css" />
+        <link rel="Stylesheet" type="text/css" href="croppie.css" />
+        <link rel="Stylesheet" type="text/css" href="demo.css" />
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!--<script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>-->
+        <script src="prism.js"></script>
+
+        <script src="croppie.js"></script>
+        <!--<script src="demo/demo.js"></script>-->
+        <!--<script src="bower_components/exif-js/exif.js"></script>-->
+        <style>
+            .croppie-container .cr-slider-wrap {
+                width: 30%;
+                margin: 15px auto;
+                text-align: center;
+                z-index: 99999999999 !important;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <div class="demo-wrapxc upload-demo">
+                <div class="container">
+                    <div class="grid">
+                        <div class="col-1-2">
+
+
+                        </div>
+                        <div class="col-1-2">
+                            <div class="upload-msg">
+                                Upload a file to start cropping
+                            </div>
+                            <div id="result-demo"></div>
+                            <div class="upload-demo-wrap">
+                                <div id="upload-demo"></div>
+                            </div>
+                            <br><br>
+                            <div class="actions">
+                                <a class="btn file-btn">
+                                    <span>Upload</span>
+                                    <input type="file" id="upload" accept="image/*" />
+                                </a>
+                                <button class="upload-result">Result</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <script>
+            var $uploadCrop;
+
+            function readFile(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.upload-demo').addClass('ready');
+                        $uploadCrop.croppie('bind', {
+                            url: e.target.result
+                        }).then(function () {
+                            console.log('jQuery bind complete');
+                        });
+
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    console.log("Sorry - you're browser doesn't support the FileReader API");
+                }
+            }
+
+            $uploadCrop = $('#upload-demo').croppie({
+                viewport: {
+                    width: 200,
+                    height: 200,
+                    type: 'circle'
+                },
+                enableExif: true,
+                boundary: {
+                    width: 300,
+                    height: 300
+                }
+            });
+
+            $('#upload').on('change', function () {
+                readFile(this);
+                $('#upload-demo').show();
+                $('#result-demo').html('');
+            });
+            $('.upload-result').on('click', function (ev) {
+                $uploadCrop.croppie('result', {
+                    type: 'canvas',
+					//size: 'viewport' // take selected part of image as low quality
+		            size: 'original',
+		            quality: 1
+                }).then(function (resp) {
+                    console.log(resp);
+                    $.ajax({
+                        url: 'test_convert.php',
+                        type: 'post',
+                        data: {resp: resp},
+                        dataType: 'json',
+                    }).done(function (res) {
+                        $('#upload-demo').hide();
+                        $('#result-demo').html(res.img);
+                    }).fail(function () {
+                        alert("error");
+                    });
+                });
+            });
+
+        </script>
+
+
+
+
+
+    </body>
+</html>

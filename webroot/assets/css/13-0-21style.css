@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: 'HVDFontsBrandonTextBold';
+    src: url('../fonts/HVDFontsBrandonTextBold.eot');
+    src: url('../fonts/HVDFontsBrandonTextBold.eot') format('embedded-opentype'),
+         url('../fonts/HVDFontsBrandonTextBold.woff2') format('woff2'),
+         url('../fonts/HVDFontsBrandonTextBold.woff') format('woff'),
+         url('../fonts/HVDFontsBrandonTextBold.ttf') format('truetype'),
+         url('../fonts/HVDFontsBrandonTextBold.svg#HVDFontsBrandonTextBold') format('svg');
+}
+@font-face {
+    font-family: 'HVDFontsBrandonTextLight';
+    src: url('../fonts/HVDFontsBrandonTextLight.eot');
+    src: url('../fonts/HVDFontsBrandonTextLight.eot') format('embedded-opentype'),
+         url('../fonts/HVDFontsBrandonTextLight.woff2') format('woff2'),
+         url('../fonts/HVDFontsBrandonTextLight.woff') format('woff'),
+         url('../fonts/HVDFontsBrandonTextLight.ttf') format('truetype'),
+         url('../fonts/HVDFontsBrandonTextLight.svg#HVDFontsBrandonTextLight') format('svg');
+}
+@font-face {
+    font-family: 'HVDFontsBrandonTextRegular';
+    src: url('../fonts/HVDFontsBrandonTextRegular.eot');
+    src: url('../fonts/HVDFontsBrandonTextRegular.eot') format('embedded-opentype'),
+         url('../fonts/HVDFontsBrandonTextRegular.woff2') format('woff2'),
+         url('../fonts/HVDFontsBrandonTextRegular.woff') format('woff'),
+         url('../fonts/HVDFontsBrandonTextRegular.ttf') format('truetype'),
+         url('../fonts/HVDFontsBrandonTextRegular.svg#HVDFontsBrandonTextRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'HVDFontsBrandonTextRegularItalic';
+    src: url('../fonts/HVDFontsBrandonTextRegularItalic.eot');
+    src: url('../fonts/HVDFontsBrandonTextRegularItalic.eot') format('embedded-opentype'),
+         url('../fonts/HVDFontsBrandonTextRegularItalic.woff2') format('woff2'),
+         url('../fonts/HVDFontsBrandonTextRegularItalic.woff') format('woff'),
+         url('../fonts/HVDFontsBrandonTextRegularItalic.ttf') format('truetype'),
+         url('../fonts/HVDFontsBrandonTextRegularItalic.svg#HVDFontsBrandonTextRegularItalic') format('svg');
+}
+@font-face {
+    font-family: 'HVDFontsBrandonTextThin';
+    src: url('../fonts/HVDFontsBrandonTextThin.eot');
+    src: url('../fonts/HVDFontsBrandonTextThin.eot') format('embedded-opentype'),
+         url('../fonts/HVDFontsBrandonTextThin.woff2') format('woff2'),
+         url('../fonts/HVDFontsBrandonTextThin.woff') format('woff'),
+         url('../fonts/HVDFontsBrandonTextThin.ttf') format('truetype'),
+         url('../fonts/HVDFontsBrandonTextThin.svg#HVDFontsBrandonTextThin') format('svg');
+}
+
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	margin:0;
+	padding:0;
+	font-family: 'Poppins', sans-serif;
+}
+p {
+	font-family: 'Poppins', sans-serif;
+	font-size:15px;
+	font-weight:normal;
+	line-height:21px;
+	color:#000;
+
+	padding:0 0 10px 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Poppins', sans-serif;
+	line-height:normal;
+	font-weight:bold;
+	text-transform:uppercase;
+	color:#000;
+	margin:0;
+	padding:0 0 10px 0;
+}
+h1 {
+	font-size:25px;
+}
+h2 {
+	font-size:22px;
+}
+h3 {
+	font-size:20px;
+}
+h4 {
+	font-size:18px;
+}
+h5 {
+	font-size:16px;
+}
+h6 {
+	font-size:15px;
+}
+a {
+	color:#000;
+	outline:none;
+	text-decoration:none;
+}
+.fa-phone {
+	transform: rotate(90deg);
+}
+img {
+	border:0;
+}
+ul, ul li {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+
+header {
+    float: left;
+    width: 100%;
+    position: relative;
+    z-index: 11;
+    padding: 13px 0;
+    background: #4451bb;
+}
+.ads-top{
+    float: left;
+    width: 100%;
+}
+.ads-top img{
+    width: 100%;
+}
+.search-box {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+}
+.logo-box img {
+    width: 51%;
+}
+.search-box{
+    float: left;
+    width: 100%;
+}
+.search-box form {
+    float: right;
+    width: 54%;
+    text-align: right;
+    position: relative;
+}
+input.input-box {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    padding: 8px 16px;
+    color: #fff;
+    font-family: 'HVDFontsBrandonTextRegularItalic';
+    font-size: 19px;
+    outline: none;
+}
+.search-box button {
+    border: none;
+    background: none;
+    width: 15%;
+    padding: 11px;
+    padding-right: 38px;
+    display: inline-block;
+    position: relative;
+    z-index: 1111;
+}
+/*.search-box button img{
+    width: 10px;
+}*/
+svg.svg-inline--fa.fa-search.fa-w-16.fa-7x {
+    color: #fff;
+    width: 19px;
+}
+
+input.input-box::placeholder{
+color: #fff;
+}
+
+
+
+.banner-box{
+    float: left;
+    width: 100%;
+    position: relative;
+}
+.banner-box img{
+    width: 100%;
+}
+
+.banner-text {
+    float: left;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 37%;
+    transform: translate(-50%, -50%);
+}
+.banner-text h4 {
+    color: #fff;
+    font-size: 31px;
+    font-family: 'HVDFontsBrandonTextRegular';
+    letter-spacing: 12px;
+    text-transform: capitalize;
+}
+
+.banner-text h2 {
+    font-size: 48px;
+    color: #fff;
+    font-family: 'HVDFontsBrandonTextBold';
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+.banner-text p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 27px;
+    font-family: 'HVDFontsBrandonTextLight';
+}
+.banner-text a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    /* font-family: 'HVDFontsBrandonTextLight'; */
+    font-family: 'HVDFontsBrandonTextRegular';
+}
+
+
+
+
+.beginners {
+    float: left;
+    width: 100%;
+    padding: 0 0 50px 0;
+}
+
+.beginners h2{
+    font-size: 48px;
+    color: #4151b7;
+    font-family: 'HVDFontsBrandonTextBold';
+    text-transform: capitalize;
+    letter-spacing: 2px;    
+}
+
+.beginners-leaft {
+    float: left;
+    width: 100%;
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
+.beginners-leaft-item{
+    display: inline-block;
+    float: left;
+}
+.beginners-leaft-right {
+    float: left;
+    width: 66%;
+    vertical-align: middle;
+    padding: 39px 2px 39px 15px;
+}
+.beginners-leaft-item img {
+    width: 112px;
+}
+.beginners-leaft-right h3 {
+    /* font-family: 'HVDFontsBrandonTextLight'; */
+    font-family: 'HVDFontsBrandonTextRegular';
+    text-transform: capitalize;
+    color: #333;
+    font-size: 20px;
+    padding: 0;
+}
+.beginners-leaft:hover .beginners-leaft-right h3{
+    color: #4853c3;
+}
+
+.beginners-right {
+    float: left;
+    width: 100%;
+}
+.beginners-right ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.beginners-right ul li {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    padding-bottom: 33px;
+}
+.beginners-right ul li p{
+    font-family: 'HVDFontsBrandonTextRegular';
+    text-transform: capitalize;
+    color: #333;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+.beginners-right ul li p:hover {
+    color: #4853c3;
+}
+.beginners-right ul li p span.no-box {
+    width: 50px;
+    height: 50px;
+    background: #ffedcc;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 8px;
+    line-height: 50px;
+    color: #fdaf06;
+    letter-spacing: 2px;
+    font-family: 'HVDFontsBrandonTextBold';
+    margin-right: 10px;
+}
+.beginners-right ul li:nth-child(2) p span.no-box{
+    background: #dff4f6;
+    color: #43cee2;
+}
+.beginners-right ul li:nth-child(3) p span.no-box{
+    background: #f8deed;
+    color: #cf509a;
+}
+.beginners-right ul li:nth-child(4) p span.no-box{
+    background: #fdd4d7;
+    color: #e43e47;
+}
+.beginners-right ul li:nth-child(5) p span.no-box{
+    background: #fbf9d2;
+    color: #bac82a;
+}
+.beginners-right ul li:nth-child(6) p span.no-box{
+    background: #d7e5fa;
+    color: #437ee4;
+}
+.beginners-right ul li:nth-child(7) p span.no-box{
+    background: #cff6e1;
+    color: #2ecc75;
+}
+.beginners-right ul li:nth-child(8) p span.no-box{
+    background: #fae9c3;
+    color: #cc951e;
+}
+.beginners-right ul li:nth-child(9) p span.no-box{
+    background: #fdd4d7;
+    color: #e43e47;
+}
+.beginners-right ul li:nth-child(10) p span.no-box{
+    background: #cff6e1;
+    color: #2ecc75;
+}
+.beginners-right ul li:last-child p span.no-box{
+    background: #ffda95;
+    color: #c98508;
+}
+
+a.middle-school {
+    text-decoration: none;
+    padding: 14px 25px;
+    background: #4853c3;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'HVDFontsBrandonTextRegular';
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin-top: 31px;
+    display: inline-block;
+}
+a.middle-school:hover {
+
+    background: #ff0013;
+} 
+.second-language{
+    float: left;
+    width: 100%;
+    padding : 50px 0;
+    background: #f6f6f6;
+    text-align: center;]
+}
+.second-language h2 {
+    font-family: 'HVDFontsBrandonTextRegular';
+    text-transform: capitalize;
+    color: #4853c3;
+    font-size: 31px;
+    padding: 0;
+}
+.second-language h2 a{
+color: #4853c3;
+}
+.second-language p{
+    font-family: 'HVDFontsBrandonTextRegular';
+    text-transform: capitalize;
+    color: #333;
+    font-size: 18px;
+    padding: 0;
+    margin: 17px;
+}
+.second-language h4 {
+    font-family: 'HVDFontsBrandonTextRegular';
+    text-transform: capitalize;
+    color: #4853c3;
+    font-size: 20px;
+    padding: 0;
+}
+.second-language img {
+    width: 120px;
+    margin-top: 20px;
+}
+
+footer {
+    float: left;
+    width: 100%;
+    padding: 61px 0px 10px;
+    background: #32353b;
+    text-align: center;
+}
+footer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+footer ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: #3b5693;
+    color: #fff;
+    font-family: 'HVDFontsBrandonTextRegular';
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+footer ul li  a .fa {
+    margin-right: 10px;
+}
+
+footer ul li a:hover{
+    color: #ccc;
+    text-decoration: none;
+
+}
+footer ul li:last-child a {
+    background: #55adee;
+}
+
+footer h3 {
+    font-family: 'HVDFontsBrandonTextBold';
+    color: #fff;
+    font-size: 30px;
+    margin: 48px 0;
+}
+footer p {
+    font-family: 'HVDFontsBrandonTextRegular';
+    color: #fff;
+    margin: 0;
+    border-top: 1px solid #cccccc59;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.middel-ads {
+    float: left;
+    width: 100%;
+}
+
+.middel-ads img{
+    width: 100%;
+    margin-bottom: 10px;
+}

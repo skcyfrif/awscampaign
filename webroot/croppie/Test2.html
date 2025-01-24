@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Crop a selected image</title>
+
+        <meta name="description" content="Croppie is an easy to use javascript image cropper.">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>
+        <link rel="Stylesheet" type="text/css" href="prism.css" />
+        <link rel="Stylesheet" type="text/css" href="croppie.css" />
+        <link rel="Stylesheet" type="text/css" href="demo.css" />
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!--<script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>-->
+        <script src="prism.js"></script>
+
+        <script src="croppie.js"></script>
+        <!--<script src="demo/demo.js"></script>-->
+        <!--<script src="bower_components/exif-js/exif.js"></script>-->
+        <style>
+            .croppie-container .cr-slider-wrap {
+                width: 30%;
+                margin: 15px auto;
+                text-align: center;
+                z-index: 99999999999 !important;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <section>           
+
+
+            <div class="demo-wrapxc">
+                <div class="container">
+                    <div class="grid">
+                        <div class="col-1-2">
+                            <strong>Resizer Example</strong>
+                            <div class="actions">
+                                <button class="resizer-result">Result</button>
+                            </div>
+                        </div>
+                        <div id="result-demo"></div>
+                        <div class="col-1-2">
+                            <div id="resizer-demo"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <script>
+            var vEl = document.getElementById('resizer-demo'),
+                    resize = new Croppie(vEl, {
+                        viewport: {width: 200, height: 200, type: 'circle'},
+                        boundary: {width: 300, height: 300},
+                        showZoomer: true,
+                        enableResize: false,
+                        enableOrientation: true,
+                        mouseWheelZoom: 'ctrl'
+                    });
+            resize.bind({
+                url: 'demo-3.jpg',
+                zoom: 0
+            });
+            vEl.addEventListener('update', function (ev) {
+//                console.log('resize update', ev);
+            });
+            document.querySelector('.resizer-result').addEventListener('click', function (ev) {
+                resize.result({
+                    type: 'canvas',
+                    //size: 'viewport' // take selected part of image as low quality
+                    size: 'original',
+                    quality: 1
+                }).then(function (resp) {
+//                    console.log(resp);
+                    $.ajax({
+                        url: 'test_convert.php',
+                        type: 'post',
+                        data: {resp: resp},
+                        dataType: 'json',
+                    }).done(function (res) {
+                        // $('#upload-demo').hide();
+                        $('#result-demo').html(res.img);
+                    }).fail(function () {
+                        alert("error");
+                    });
+
+
+                });
+            });
+
+        </script>
+
+
+    </body>
+</html>
